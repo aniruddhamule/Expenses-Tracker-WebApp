@@ -1,42 +1,13 @@
-#———stage1 - jar builder ————-
-
-# Maven image
-
-FROM maven:3.8.3-openjdk-17 AS builder 
-
-# Set working directory
-
+# -------- Stage 1: Build --------
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
-
-# Copy source code from local to container
-
-COPY . /app
-
-# Build application and skip test cases
-
-#EXPOSE 8080
-
+COPY . .
 RUN mvn clean install -DskipTests=true
 
-#ENTRYPOINT ["java", "-jar", "/expenseapp.jar"]
-
-#--------------------------------------
-# Stage 2 - app build
-#--------------------------------------
-
-# Import small size java image
-
-FROM openjdk:17-alpine
-
-WORKDIR /app 
-
-# Copy build from stage 1 (builder)
-
-COPY --from=builder /app/target/*.jar /app/target/expenseapp.jar
-
-# Expose application port 
-
+# -------- Stage 2: Run --------
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
 EXPOSE 8080
+ENTRYPOINT ["java","-jar","app.jar"]
 
-# Start the application
-ENTRYPOINT ["java", "-jar", "/app/target/expenseapp.jar"]
