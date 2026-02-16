@@ -344,7 +344,9 @@ SECRET_KEY=your_secret_key
 ## Credits & Acknowledgments
 
 This project is based on the original work by **Shubham Londhe** 
+
 Original Repository: (https://github.com/LondheShubham153/django-notes-app.git)
+
 I have used this project for learning and deployment purposes, with modifications for AWS EC2 deployment and Docker containerization.
 
 ---
