@@ -15,7 +15,7 @@ The application follows a multi-container architecture:
 
 ## 🏗 Architecture Diagram
 
-*(Add your architecture diagram here)*
+*<img width="2816" height="1536" alt="Gemini_Generated_Image_qwdahbqwdahbqwda" src="https://github.com/user-attachments/assets/646b3bed-791b-4c75-a2f1-e8fbd30cc78c" />*
 
 ---
 
@@ -229,27 +229,18 @@ Expenses-Tracker-WebApp/
 ## 📸 Application Screenshots
 
 ### 📝 Dashboard View
-*(Add screenshot of your dashboard here)*
+*<img width="1357" height="768" alt="Screenshot 2026-02-15 022706" src="https://github.com/user-attachments/assets/73c59585-444f-44fb-9650-f1ec1306fe31" />
+*
 
 ---
 
-### 💰 Add Expense Page
-*(Add screenshot of add expense page here)*
-
----
-
-### 📊 Reports & Analytics
-*(Add screenshot of reports page here)*
+### 📊 logs
+*<img width="1360" height="642" alt="Screenshot 2026-02-15 022724" src="https://github.com/user-attachments/assets/0694aecb-2c72-49a4-9dcc-5e518b3cfb18" />*
 
 ---
 
 ### ☁ AWS EC2 Instance Running
-*(Add screenshot of your EC2 instance here)*
-
----
-
-### 🐳 Docker Containers Running
-*(Add screenshot of docker ps output here)*
+*<img width="1360" height="624" alt="Screenshot 2026-02-15 022642" src="https://github.com/user-attachments/assets/6369aa55-8c08-4d1d-9017-65d30ec53e03" />*
 
 ---
 
@@ -294,17 +285,6 @@ Check `docker-compose.yml` environment variables:
 - `DB_USER`
 - `DB_PASSWORD`
 
-### Permission issues with volumes?
-```bash
-sudo chown -R 1000:1000 ./data
-```
-
-### Port already in use?
-```bash
-sudo lsof -i :80
-sudo kill <PID>
-```
-
 ---
 
 ## 📋 Environment Variables
@@ -331,31 +311,6 @@ SECRET_KEY=your_secret_key
 
 ---
 
-## 🔄 Backup and Restore
-
-### Backup Database
-```bash
-docker exec db_cont pg_dump -U postgres expenses_db > backup_$(date +%Y%m%d).sql
-```
-
-### Restore Database
-```bash
-cat backup.sql | docker exec -i db_cont psql -U postgres expenses_db
-```
-
----
-
-## 🚀 Future Enhancements
-
-- User authentication system
-- Multi-user support with profiles
-- Budget planning tools
-- Email notifications for overspending
-- Mobile-responsive design improvements
-- Data export to Excel/PDF
-- API for third-party integrations
-
----
 
 ## 📊 Quick Reference Commands
 
@@ -388,65 +343,7 @@ cat backup.sql | docker exec -i db_cont psql -U postgres expenses_db
 
 ## 🙏 Credits & Acknowledgments
 
-This project was developed and deployed by **Aniruddha Mule**.
 
-- **Developer:** Aniruddha Mule
-- **GitHub:** [@aniruddhamule](https://github.com/aniruddhamule)
-- **Repository:** [Expenses-Tracker-WebApp](https://github.com/aniruddhamule/Expenses-Tracker-WebApp)
-
----
-
-## 📚 Additional Resources
-
-- [Docker Documentation](https://docs.docker.com/)
-- [Docker Compose Documentation](https://docs.docker.com/compose/)
-- [AWS EC2 Guide](https://docs.aws.amazon.com/ec2/)
-- [Nginx Documentation](https://nginx.org/en/docs/)
-- [Flask Documentation](https://flask.palletsprojects.com/) (if using Flask)
-- [Django Documentation](https://docs.djangoproject.com/) (if using Django)
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/aniruddhamule/Expenses-Tracker-WebApp/issues).
-
-### How to Contribute
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## ⭐ Show your support
-
-Give a ⭐️ if this project helped you!
-
----
-
-## 🎓 Conclusion
-
-This project demonstrates a complete production-ready deployment of an Expenses Tracker Web Application using modern DevOps practices:
-
-- **Containerization** with Docker for consistency
-- **Orchestration** with Docker Compose
-- **Cloud Infrastructure** on AWS EC2
-- **Reverse Proxy** with Nginx for security
-- **Database Persistence** with volumes
-- **Isolated Networking** for security
-
-The application is now running in production, allowing users to track their daily expenses efficiently.
 
 ---
 
